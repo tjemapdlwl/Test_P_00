@@ -320,6 +320,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/01.Script/Camera.cs"
+"Assets/01.Script/UI_MainTitle.cs"
 -langversion:8.0
 
 /deterministic
