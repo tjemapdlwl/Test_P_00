@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UI_MainTitle : MonoBehaviour
 {
+    public GameMgr _gameMgr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +20,22 @@ public class UI_MainTitle : MonoBehaviour
 
     public void btnNewGame()
     {
+        //Send meassge 'Init Game' Meassge to Game manager
+        if (_gameMgr)
+            _gameMgr.InitGame();
 
+        //this.gameObject.SetActive(false);
     }
 
     public void btnConnectGame()
     {
-
+        //if(connect)
+        //Receive Data From Server
+        //
     }
 
     public void btnExit()
     {
-        
+        _gameMgr.InitGame();
     }
 }
