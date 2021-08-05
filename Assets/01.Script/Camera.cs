@@ -52,7 +52,6 @@ public class Camera : MonoBehaviour
             Vector3 vecCross = Vector3.Cross(vecDir, _target.forward);
 
             
-            Debug.Log("Cross Vector : " + vecCross);
             float sign = vecCross.y >= 0.0f ? 1.0f : -1.0f;
 
 
@@ -61,8 +60,6 @@ public class Camera : MonoBehaviour
             angle = angle * Mathf.Rad2Deg * sign;
 
             _position.RotateAround(_target.position, Vector3.up, angle);
-
-            Debug.Log("Angle : " + angle + "Foward : " + _target.forward);
 
             _position.LookAt(_target);
             
