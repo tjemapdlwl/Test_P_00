@@ -22,26 +22,16 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TraceTarget();
+    }
+
+    bool TraceTarget()
+    {
         if(_target)
         {
             _position.position = _target.position + _offset;
             
-            // if(_prevAngle != _target.rotation.y)
-            // {
-                // Vector2 vec2Target, vec2Cam;
-                // vec2Cam = new Vector2(_position.position.x, _position.position.y);
-                // vec2Target = new Vector2(_target.position.x, _target.position.y);
 
-
-                
-                // float angle = Vector2.Dot(vec2Cam, vec2Target);
-
-                // Vector3 camToTargetDir = _target.position - _position.position;
-               
-                // camToTargetDir.Normalize();
-
-               //_position.RotateAround(_target.position, Vector3.up, _velocity * Time.deltaTime);
-            //}
             Vector3 vecCampPos = new Vector3(_position.position.x, _target.position.y, _position.position.z);
 
             Vector3 vecDir = _target.position - vecCampPos;
@@ -63,6 +53,11 @@ public class Camera : MonoBehaviour
 
             _position.LookAt(_target);
             
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
